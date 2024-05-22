@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Number</title>
+  </head>
+  <body>
+    <script>
+      console.log("Guess Number Game");
+
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      console.log(`The random number is: ${randomNumber}`);
+
+      const guessNumber = parseInt(
+        prompt("Guess a number between 1 and 100: ")
+      );
+      console.log(`You choose the number ${guessNumber}`);
+
+      const foundTheNumber = () => {
+        let counter = 0;
+        let sumGuessedNumber = 0;
+        if (guessNumber === randomNumber) {
+          console.log(`Congratulation your number ${randomNumber} is correct`);
+        } else if (guessNumber > randomNumber) {
+          console.log("Your number is two big");
+          counter++;
+          const secondGuessNum = parseInt(prompt("Guess another number:"));
+          counter++;
+          console.log(counter);
+        } else {
+          console.log("Your number is to small");
+          counter++;
+        }
+      };
+
+      foundTheNumber();
+    </script>
+  </body>
+</html>
